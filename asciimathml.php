@@ -402,8 +402,8 @@ THE SOFTWARE.
         }
         // if str[0] is a digit or - return maxsubstring of digits.digits
         $this->currentSymbol = self::CONST;
-        if (preg_match('/^(\d*\.\d+|\d+\.?)/', $str, $matches)) { // rewritten, GS
-            $st = str_replace(".", $this->decimal, $matches[0]); // added, GS
+        if (preg_match('/^\d+(?:\.\d+)?(?:e[-+]?\d+)?/', $str, $matches)) { // rewritten, GS
+            $st = str_replace([ ".", "-" ], [ $this->decimal, "\u{2212}" ], $matches[0]); // added, GS
             $tagst = "mn";
         } else {
             $st = substr($str, 0, 1); // take 1 character

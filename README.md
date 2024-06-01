@@ -27,7 +27,7 @@ require "asciimathml.php";
 
 $parser = new AsciiMathMl();
 $asciimath = "x=(-b+-sqrt(b^2-4ac))/(2a)";
-$mathml = $parser->parse($asciimath);
+$mathml = $parser->parseMath($asciimath);
 ```
 
 ## Acknowledgements
